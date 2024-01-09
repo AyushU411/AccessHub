@@ -1,0 +1,267 @@
+/*body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#notes-container {
+    margin-bottom: 20px;
+}
+
+.note {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#voice-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#para{
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+#heading{
+    margin-left: 5%;
+}
+#key{
+    margin-left: 5%;
+}
+#mic{
+    text-align: center;
+    font-size:xx-large
+}
+.highlight {
+    background-color: yellow; 
+    transition: background-color 0.5s ease; 
+}*/
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #d0e8e5;;
+    color: #333;
+}
+
+header {
+       background-color: #399294;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #82c7ba;;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#notes-container {
+    margin-bottom: 20px;
+}
+
+.note {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px 0;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+#voice-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 5px;
+    /* margin-bottom: 60px; */
+    font-size: 16px;
+    cursor: pointer;
+        background-color: #569a9d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+        background-color: #1f494b;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+#para{
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+}
+#heading{
+    margin-left: 5%;
+}
+#key{
+    margin-left: 5%;
+}
+#mic{
+    text-align: center;
+    font-size:xx-large
+}
+/* Add this CSS for the highlight style */
+.highlight {
+    background-color: yellow; /* Choose a comfortable highlight color */
+    transition: background-color 0.5s ease; /* Add a smooth transition effect */
+}
+button:hover{
+  padding: 12px 20px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    /*background-color: #00ffea; */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    height: 80px;
+    width: 160px;
+    transition: background-color 0.3s;
+    margin-bottom: 0px;
+}
+#edit-notes-textarea{
+  margin-top: 40px;
+  position:sticky;
+}
+footer {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.enlarge-on-hover {
+    transition: transform 0.3s ease-in-out;
+}
+
+.enlarge-on-hover:hover {
+    transform: scale(1.2);
+}
+
+/* Styles for the Instructions Section */
+#instructions {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.instruction-step {
+    margin-bottom: 20px;
+}
+
+.instruction-step h3 {
+    color: #333;
+}
+
+.instruction-step p {
+    color: #666;
+}
+
+.note {
+    font-style: italic;
+    color: #888;
+}
+
+/* Optional: Add styles for icons if used */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+

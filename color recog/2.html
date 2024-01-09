@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Recognition Assistant</title>
+    <script src="https://cdn.jsdelivr.net/tracking.js/1.1.3/tracking-min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 20px;
+            text-align: center;
+            /* background-color: #f5f5f5; */
+              background-image: url("cvv.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      background-attachment: fixed;
+        }
+
+        h1 {
+            color: #ede6e6;
+        }
+
+        #imageInput {
+            margin: 10px 0;
+        }
+
+        #result {
+            /* font-size: 18px; */
+            /* font-weight: bold; */
+            color: #d9e1e1;
+        }
+       #imageContainer {
+            cursor: pointer;
+        }
+.inv{
+      filter: invert(100%); 
+}
+    </style>
+</head>
+
+<body>
+    <h1>Color Recognition Assistant</h1>
+    <!-- <input type="file"  class="glossyBtn" id="imageInput" accept="image/*"> -->
+    <!-- <img src="add-image.png" alt=""> -->
+    <input type="file" id="fileInput"   accept="image/*" style="display: none;" onchange="handleFileSelect(this)">
+
+<!-- Clickable image container -->
+<div id="imageContainer" onclick="openFileInput()">
+    <img src="add-image.png" class="inv" alt="Clickable Image" height="300px" width="300px">
+      <h1 id="result"></h1>
+</div>
+
+
+    <script>
+ function openFileInput() {
+        document.getElementById('fileInput').click();
+    }
+
+    // Function to handle the selected file
+    function handleFileSelect(input) {
+        const file = input.files[0];
+        if (file) {
+            const reader = new FileReader();
+                reader.onload = function (e) {
+                    const image = new Image();
+                    image.src = e.target.result;
+
+                    image.onload = function () {
+                        identifyColor(image);
+                    };
+                };
+                reader.readAsDataURL(file);
+        }
+    }
+
+      
+
+        function getEuclideanDistance(color1, color2) {
+            return Math.sqrt(
+                Math.pow(color1[0] - color2[0], 2) +
+                Math.pow(color1[1] - color2[1], 2) +
+                Math.pow(color1[2] - color2[2], 2)
+            );
+        }
+
+        function identifyColor(image) {
+            const canvas = document.createElement('canvas');
+            canvas.width = image.width;
+            canvas.height = image.height;
+            const context = canvas.getContext('2d');
+            context.drawImage(image, 0, 0, image.width, image.height);
+
+            const centerX = Math.floor(image.width / 2);
+            const centerY = Math.floor(image.height / 2);
+            const pixel = context.getImageData(centerX, centerY, 1, 1).data;
+
+            const colorName = getColorName(pixel);
+            document.getElementById('result').innerText = `The identified color is: ${colorName}`;
+        }
+
+        function getColorName(rgbValues) {
+            const COLORS = {
+                red: [255, 0, 0],
+                green: [0, 255, 0],
+                blue: [0, 0, 255],
+                yellow: [255, 255, 0],
+                orange: [255, 165, 0],
+                purple: [128, 0, 128],
+                white: [255, 255, 255],
+                black: [0, 0, 0],
+                gray: [128, 128, 128],
+            };
+
+            let minDistance = Infinity;
+            let colorName = null;
+
+            for (const name in COLORS) {
+                const distance = getEuclideanDistance(rgbValues, COLORS[name]);
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    colorName = name;
+                }
+            }
+
+            return colorName;
+        }
+    </script>
+</body>
+
+</html>

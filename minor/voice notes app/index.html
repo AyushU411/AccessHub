@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice Notes App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Voice Notes App</h1>
+    </header>
+
+
+    <!-- Help / Instructions Section -->
+    <div id="instructions" class="section">
+        <div class="enlarge-on-hover">
+            <div id="para">
+                Welcome to [Voice Notes Feature] - Your Voice Note Companion 🎙️
+                <br>
+                Discover the power of seamless note-taking with our innovative
+                Voice Notes App! Say goodbye to traditional typing and embrace
+                the freedom of expressing your thoughts effortlessly through your voice.
+            </div>
+        </div>
+        <div class="enlarge-on-hover">
+            <h2>How to Use</h2>
+            <p>Get started with Voice Notes App by following these simple instructions:</p>
+        </div>
+        <div class="enlarge-on-hover">
+            <div class="instruction-step">
+                <h3>1. Start Listening</h3>
+                <p>Click the "Start Listening" button to activate voice recognition.</p>
+                <img src="start.png" alt="Start Listening Icon" />
+            </div>
+        </div>
+
+
+        <div class="enlarge-on-hover">
+            <div class="instruction-step">
+                <h3>2. Speak Commands</h3>
+                <p>Use voice commands to create notes, delete notes, or read notes aloud.</p>
+                <!--<img src="voice-command-icon.png" alt="Voice Command Icon" />-->
+            </div>
+        </div>
+
+
+        <div class="enlarge-on-hover">
+            <div class="instruction-step">
+                <h3>3. Save Your Note</h3>
+                <p>Click the "Save Note" button to store your voice-created note.</p>
+                <img src="save.png" alt="Save Note Icon" />
+            </div>
+        </div>
+
+        <div class="enlarge-on-hover">
+            <div class="instruction-step">
+                <h3>4. View and Manage</h3>
+                <p>Explore your notes by clicking the "View Saved Notes" button and download your notes by clicking the
+                    "Download" button.</p>
+                <img src="view.png" alt="View Notes Icon" />
+                <img src="download.png" alt="View Notes Icon" />
+            </div>
+        </div>
+
+        <div class="enlarge-on-hover">
+            <div class="instruction-step">
+                <h3>5. Edit your Notes</h3>
+                <p>Edit your notes by clicking the "Edit Notes" button.</p>
+                <img src="edit.png" alt="View Notes Icon" />
+            </div>
+        </div>
+
+        <p class="note">Note: Ensure your microphone is enabled and properly configured for optimal performance.</p>
+    </div>
+
+
+
+
+
+    <main>
+        <div id="notes-container">
+            <!-- Notes will be dynamically added here -->
+        </div>
+        <div id="mic">🎙️</div>
+        <div id="voice-controls">
+            <button id="start-listening">Start Listening</button>
+            <button id="stop-listening">Stop Listening</button>
+            <button id="save-note">Save Note</button>
+            <button id="view-saved-notes">View Saved Notes</button> <!-- Add View Saved Notes button -->
+            <!-- Add this button where you want it in your HTML -->
+            <button id="download-notes-btn">Download Notes</button>
+            <!-- Add this button and textarea where you want them in your HTML -->
+            <button id="edit-notes-btn">Edit Notes</button>
+            <button id="clear-all-notes">Clear All Notes</button>
+            <textarea id="edit-notes-textarea" rows="10" style="width: 100%;"></textarea>
+            <br>
+            <input type="file" id="file-input" accept=".docx">
+            <button id="read-file">Read File</button>
+
+
+
+        </div>
+        </div>
+        <br>
+        <br>
+    </main>
+
+
+
+    <footer>
+        <!-- Modal for displaying saved notes -->
+        <div id="saved-notes-modal" class="modal">
+            <div class="modal-content">
+                <h2>Saved Notes</h2>
+                <ul id="saved-notes-list"></ul>
+                <span class="close" onclick="closeModal()">Close</span>
+                <button onclick="closeModal()">Close</button><!-- Close button inside the modal -->
+            </div>
+        </div>
+
+        <!-- Create Note Modal -->
+        <div id="create-note-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('create-note-modal')">&times;</span>
+                <h2>Create Note</h2>
+                <textarea id="note-textarea" rows="10" style="width: 100%;" placeholder="Enter your note"></textarea>
+                <button id="modal-ok-btn">OK</button>
+            </div>
+        </div>
+
+
+
+        <div class="enlarge-on-hover">
+            <h3 id="heading">
+                Key Features:
+            </h3>
+        </div>
+        <div class="enlarge-on-hover">
+            <p id="key">🔊 Create Notes Anywhere, Anytime: Whether you're on the go or in the comfort of your home,
+                simply speak
+                your mind, and let our app transform your voice into organized notes.</p>
+            <p id="key">🔄 Read Aloud: Immerse yourself in the convenience of having your notes read aloud to you.
+                Perfect for
+                multitasking and hands-free productivity.</p>
+            <p id="key">💬 Intuitive Voice Commands: Navigate through the app effortlessly with voice commands. Create,
+                delete,
+                and read notes with a simple spoken instruction.</p>
+            <p id="key">🌐 Cross-Browser Compatibility: Experience the app on your favorite web browsers, making it
+                accessible
+                wherever you are.</p>
+        </div>
+    </footer>
+    <!-- Add these script tags to include the required libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.1.0/mammoth.browser.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
